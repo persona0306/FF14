@@ -1,0 +1,11 @@
+name: FF14
+version: 0.1
+api-version: 1.17
+main: potato.ball.ff14.Main
+author: PotatoBaller
+commands:
+  ff:
+    description: FinalFantasy Command
+    usage: /<command>
+    default: true
+    aliases: [cspe]
