@@ -8,4 +8,7 @@ commands:
     description: FinalFantasy Command
     usage: /<command>
     default: true
-    aliases: [cspe]
+  stats:
+    description: FinalFantasy Command
+    usage: /<command>
+    default: true

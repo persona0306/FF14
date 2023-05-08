@@ -29,6 +29,8 @@ public class Main extends JavaPlugin {
 		pm.registerEvents(new EventListener(), this);
 
 		getCommand("ff").setExecutor(new Command_FF());
+		
+		getCommand("stats").setExecutor(new Command_Stats());
 	}
 
 }
