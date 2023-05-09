@@ -31,6 +31,8 @@ public class Main extends JavaPlugin {
 		getCommand("ff").setExecutor(new Command_FF());
 		
 		getCommand("stats").setExecutor(new Command_Stats());
+		
+		getCommand("jobchange").setExecutor(new Command_JobChange());
 	}
 
 }
