@@ -11,7 +11,7 @@ public class MagicDoctor extends Job {
 	
 	@Override
 	public PlayerStats getBaseStats() {
-		PlayerStats playerStats = new PlayerStats(getPlayer(),40, 80, 500, 60, 120);
+		PlayerStats playerStats = new PlayerStats(getPlayer(),40, 80, 500, 60, 120, 50);
 		return playerStats;
 	}
 

@@ -14,14 +14,16 @@ public class PlayerStats {
 	private int mp;
 	private int mind;
 	private int intelligence;
+	private int crit;
 	
-	public PlayerStats(OfflinePlayer player, int atk, int def, int maxhp, int intelligence, int mind) {
+	public PlayerStats(OfflinePlayer player, int atk, int def, int maxhp, int intelligence, int mind, int crit) {
 		uuid = player.getUniqueId();
 		this.atk = atk;
 		this.def = def;
 		this.maxhp = maxhp;
 		this.intelligence = intelligence;
 		this.mind = mind;
+		this.crit = crit;
 		
 		hp = maxhp;
 		mp = 10000;
@@ -48,6 +50,9 @@ public class PlayerStats {
 	}
 	public int getIntelligence() {
 		return intelligence;
+	}
+	public int getCrit() {
+		return crit;
 	}
 	public OfflinePlayer getPlayer() {
 		OfflinePlayer player = Bukkit.getOfflinePlayer(uuid);

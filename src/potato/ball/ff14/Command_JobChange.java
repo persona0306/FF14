@@ -21,8 +21,10 @@ public class Command_JobChange implements CommandExecutor {
 		Job job;
 		if (args[0].equalsIgnoreCase("Knight")) {
 			job = new Knight(player);
+			sender.sendMessage("ジョブを変更しました");
 		}else if (args[0].equalsIgnoreCase("MagicDoctor")) {
 			job = new MagicDoctor(player);
+			sender.sendMessage("ジョブを変更しました");
 		}else {
 			sender.sendMessage("そのジョブは存在しません");
 			sender.sendMessage("\nジョブ一覧");

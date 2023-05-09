@@ -23,13 +23,16 @@ public class Command_Stats implements CommandExecutor {
 		
 		PlayerStats playerStats = playerData.getStats();
 
-		sender.sendMessage(""+ChatColor.GOLD+ChatColor.BOLD+ChatColor.UNDERLINE+"    ステータス    ");
-		sender.sendMessage("\n"+ChatColor.WHITE+playerStats.getHp()+"  "+ChatColor.GOLD+ChatColor.BOLD+"HP");
-		sender.sendMessage(("10000")+ChatColor.LIGHT_PURPLE+ChatColor.BOLD+" MP");
-		sender.sendMessage(playerStats.getAtk()+"   "+ChatColor.DARK_RED+ChatColor.BOLD+"ATK");
-		sender.sendMessage(playerStats.getDef()+"   "+ChatColor.BLUE+ChatColor.BOLD+"DEF");
-		sender.sendMessage(playerStats.getIntelligence()+"   "+ChatColor.DARK_PURPLE+ChatColor.BOLD+" INT  ");
-		sender.sendMessage(playerStats.getMind()+"   "+ChatColor.GREEN+ChatColor.BOLD+" MND  ");
+		sender.sendMessage(""+ChatColor.AQUA+ChatColor.BOLD+ChatColor.UNDERLINE+"    "+ChatColor.WHITE+ChatColor.BOLD+player.getName() +"'s Stats"+ChatColor.AQUA+ChatColor.BOLD+ChatColor.UNDERLINE+ "    ");
+		sender.sendMessage("\n"+ChatColor.GRAY+("your current job is  ")+ChatColor.UNDERLINE);
+		sender.sendMessage("\n      "+ChatColor.GOLD+ChatColor.BOLD+"HP"+ChatColor.LIGHT_PURPLE+ChatColor.BOLD+"        MP");
+		sender.sendMessage("        "+ChatColor.WHITE+playerStats.getHp()+"        "+playerStats.getMp());
+		sender.sendMessage("      "+ChatColor.DARK_RED+ChatColor.BOLD+"ATK"+ChatColor.BLUE+ChatColor.BOLD+"       DEF");
+		sender.sendMessage("          "+ChatColor.WHITE+playerStats.getAtk()+"          "+playerStats.getDef());
+		sender.sendMessage("      "+ChatColor.DARK_PURPLE+ChatColor.BOLD+"INT"+ChatColor.GREEN+ChatColor.BOLD+"       MND");
+		sender.sendMessage("          "+ChatColor.WHITE+playerStats.getIntelligence()+"          "+playerStats.getMind());
+		sender.sendMessage("      "+ChatColor.YELLOW+ChatColor.BOLD+"CRT");
+		sender.sendMessage("          "+ChatColor.WHITE+playerStats.getCrit());
 
 
 		return true;
