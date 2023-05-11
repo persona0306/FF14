@@ -20,7 +20,8 @@ public abstract class Job {
 		OfflinePlayer player = Bukkit.getOfflinePlayer(uuid);
 		return player;
 	}
-		
+
+
 	
 }
 

@@ -22,9 +22,12 @@ public class Command_Stats implements CommandExecutor {
 		PlayerData playerData = PlayerData.get(player);
 		
 		PlayerStats playerStats = playerData.getStats();
+		
+		
 
-		sender.sendMessage(""+ChatColor.AQUA+ChatColor.BOLD+ChatColor.UNDERLINE+"    "+ChatColor.WHITE+ChatColor.BOLD+player.getName() +"'s Stats"+ChatColor.AQUA+ChatColor.BOLD+ChatColor.UNDERLINE+ "    ");
-		sender.sendMessage("\n"+ChatColor.GRAY+("your current job is  ")+ChatColor.UNDERLINE);
+		sender.sendMessage(""+ChatColor.AQUA+ChatColor.BOLD+ChatColor.UNDERLINE+"_______________________");
+		sender.sendMessage("\n"+ChatColor.WHITE+ChatColor.BOLD+player.getName() +"'s Stats");
+		sender.sendMessage("\n"+ChatColor.GRAY+("your current job is "));
 		sender.sendMessage("\n      "+ChatColor.GOLD+ChatColor.BOLD+"HP"+ChatColor.LIGHT_PURPLE+ChatColor.BOLD+"        MP");
 		sender.sendMessage("        "+ChatColor.WHITE+playerStats.getHp()+"        "+playerStats.getMp());
 		sender.sendMessage("      "+ChatColor.DARK_RED+ChatColor.BOLD+"ATK"+ChatColor.BLUE+ChatColor.BOLD+"       DEF");
@@ -33,7 +36,7 @@ public class Command_Stats implements CommandExecutor {
 		sender.sendMessage("          "+ChatColor.WHITE+playerStats.getIntelligence()+"          "+playerStats.getMind());
 		sender.sendMessage("      "+ChatColor.YELLOW+ChatColor.BOLD+"CRT");
 		sender.sendMessage("          "+ChatColor.WHITE+playerStats.getCrit());
-
+		sender.sendMessage(""+ChatColor.AQUA+ChatColor.BOLD+ChatColor.UNDERLINE+"_______________________");
 
 		return true;
 	}
