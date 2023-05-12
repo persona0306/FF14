@@ -17,6 +17,7 @@ public class PlayerData {
 		}
 		
 		return playerData;
+		
 	}
 	
 	private final UUID uuid;
@@ -28,6 +29,7 @@ public class PlayerData {
 		setJob(new Knight(player));
 		
 		playerDataMap.put(uuid, this);
+		
 	}
 	
 	public OfflinePlayer getPlayer() {
@@ -40,19 +42,38 @@ public class PlayerData {
 		return stats;
 		
 	}
+	
+	public Job getJob() {
+		return job;
+		
+	}
+	
 	public void setJob(Job job) {
 		this.job = job;
 		setStats(job.getBaseStats());
+		
 	}
+	
 	private void setStats (PlayerStats stats) {
-		int from = this.stats == null ? 0 : this.stats.getHp();
 		
-		HpUpdateEvent event = new HpUpdateEvent(getPlayer(), from, stats.getHp());
-		Bukkit.getPluginManager().callEvent(event);
+		int hpFrom = this.stats == null ? 0 : this.stats.getHp();
 		
-		stats.setHp(event.getTo());
+		HpUpdateEvent hpUpdateEvent = new HpUpdateEvent(getPlayer(), hpFrom, stats.getHp());
+		Bukkit.getPluginManager().callEvent(hpUpdateEvent);
+		
+		stats.setHp(hpUpdateEvent.getTo());
+		
+		
+		int defFrom = this.stats == null ? 0 : this.stats.getHp();
+		
+		DefUpdateEvent defUpdateEvent = new DefUpdateEvent(getPlayer(), defFrom, stats.getDef());
+		Bukkit.getPluginManager().callEvent(defUpdateEvent);
+		
+		stats.setDef(defUpdateEvent.getTo());
+		
 		
 		this.stats = stats;
+		
 	}
 	
 }

@@ -21,7 +21,6 @@ public abstract class Job {
 		return player;
 	}
 
-
-	
+	public abstract String getName();
+		
 }
-

@@ -2,8 +2,10 @@ package potato.ball.ff14;
 
 import org.bukkit.OfflinePlayer;
 
-public class Knight extends Job {
+import net.md_5.bungee.api.ChatColor;
 
+public class Knight extends Job {
+	private static final String jobName = ""+ChatColor.BLUE+ChatColor.BOLD+"Knight";
 
 	public Knight(OfflinePlayer player) {
 		super(player);
@@ -15,5 +17,8 @@ public class Knight extends Job {
 		return playerStats;
 	}
 
+	public String getName() {
+		return jobName;
 	
+	}
 }

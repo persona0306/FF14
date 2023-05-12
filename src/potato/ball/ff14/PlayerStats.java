@@ -63,7 +63,11 @@ public class PlayerStats {
 		this.atk = atk;
 	}
 	public void setDef(int def) {
-		this.def = def;
+
+		DefUpdateEvent event = new DefUpdateEvent(getPlayer(), this.def, def);
+		Bukkit.getPluginManager().callEvent(event);
+		
+		this.def = event.getTo();
 	}
 	public void setHp(int hp) {
 		HpUpdateEvent event = new HpUpdateEvent(getPlayer(), this.hp, hp);
