@@ -21,22 +21,45 @@ public class Command_Stats implements CommandExecutor {
 		
 		PlayerData playerData = PlayerData.get(player);
 		
+		Job playerJob = playerData.getJob();
+		
 		PlayerStats playerStats = playerData.getStats();
+		
+		String jobName = playerJob.getName();
 		
 		
 
-		sender.sendMessage(""+ChatColor.AQUA+ChatColor.BOLD+ChatColor.UNDERLINE+"_______________________");
+		sender.sendMessage(""+ChatColor.AQUA+ChatColor.BOLD+ChatColor.UNDERLINE+
+							"_______________________");
+		
 		sender.sendMessage("\n"+ChatColor.WHITE+ChatColor.BOLD+player.getName() +"'s Stats");
-		sender.sendMessage("\n"+ChatColor.GRAY+("your current job is "));
-		sender.sendMessage("\n      "+ChatColor.GOLD+ChatColor.BOLD+"HP"+ChatColor.LIGHT_PURPLE+ChatColor.BOLD+"        MP");
-		sender.sendMessage("        "+ChatColor.WHITE+playerStats.getHp()+"        "+playerStats.getMp());
-		sender.sendMessage("      "+ChatColor.DARK_RED+ChatColor.BOLD+"ATK"+ChatColor.BLUE+ChatColor.BOLD+"       DEF");
-		sender.sendMessage("          "+ChatColor.WHITE+playerStats.getAtk()+"          "+playerStats.getDef());
-		sender.sendMessage("      "+ChatColor.DARK_PURPLE+ChatColor.BOLD+"INT"+ChatColor.GREEN+ChatColor.BOLD+"       MND");
-		sender.sendMessage("          "+ChatColor.WHITE+playerStats.getIntelligence()+"          "+playerStats.getMind());
+		
+		sender.sendMessage("\n"+ChatColor.GRAY+("your current job is  ")+playerJob.getName());
+		
+		sender.sendMessage("\n      "+ChatColor.GOLD+ChatColor.BOLD+"HP"+
+							ChatColor.LIGHT_PURPLE+ChatColor.BOLD+"        MP");
+		
+		sender.sendMessage("        "+ChatColor.WHITE+playerStats.getHp()+
+							"        "+playerStats.getMp());
+		
+		sender.sendMessage("      "+ChatColor.DARK_RED+ChatColor.BOLD+"ATK"+
+							ChatColor.BLUE+ChatColor.BOLD+"       DEF");
+		
+		sender.sendMessage("          "+ChatColor.WHITE+playerStats.getAtk()+
+							"          "+playerStats.getDef());
+		
+		sender.sendMessage("      "+ChatColor.DARK_PURPLE+ChatColor.BOLD+"INT"+
+							ChatColor.GREEN+ChatColor.BOLD+"       MND");
+		
+		sender.sendMessage("          "+ChatColor.WHITE+playerStats.getIntelligence()+
+							"          "+playerStats.getMind());
+		
 		sender.sendMessage("      "+ChatColor.YELLOW+ChatColor.BOLD+"CRT");
+		
 		sender.sendMessage("          "+ChatColor.WHITE+playerStats.getCrit());
-		sender.sendMessage(""+ChatColor.AQUA+ChatColor.BOLD+ChatColor.UNDERLINE+"_______________________");
+		
+		sender.sendMessage(""+ChatColor.AQUA+ChatColor.BOLD+ChatColor.UNDERLINE+
+							"_______________________");
 
 		return true;
 	}
