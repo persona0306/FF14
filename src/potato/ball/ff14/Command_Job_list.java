@@ -18,7 +18,7 @@ public class Command_Job_list implements CommandExecutor {
 		sender.sendMessage("            "+ChatColor.BOLD+"ジョブ一覧");
 		
 		sender.sendMessage("");
-		sender.sendMessage("\nロール"+"   "+
+		sender.sendMessage("\n            "+
 				            ChatColor.BLUE+ChatColor.BOLD+
 							ChatColor.UNDERLINE+"  タンク  ");
 		
@@ -26,7 +26,7 @@ public class Command_Job_list implements CommandExecutor {
 		
 		
 		sender.sendMessage("");
-		sender.sendMessage("\nロール"+"  "+
+		sender.sendMessage("\n           "+
 							ChatColor.GREEN+ChatColor.BOLD+
 							ChatColor.UNDERLINE+"  ヒーラー  ");
 		
@@ -35,7 +35,7 @@ public class Command_Job_list implements CommandExecutor {
 		
 		
 		sender.sendMessage("");
-		sender.sendMessage("\nロール"+"  "+
+		sender.sendMessage("\n           "+
 							ChatColor.DARK_RED+ChatColor.BOLD+
 							ChatColor.UNDERLINE+"  ダメージ  ");
 		

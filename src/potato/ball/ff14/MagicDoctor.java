@@ -5,7 +5,8 @@ import org.bukkit.OfflinePlayer;
 import net.md_5.bungee.api.ChatColor;
 
 public class MagicDoctor extends Job {
-	private static final String jobName = ""+ChatColor.GREEN+ChatColor.BOLD+"MagicDoctor";
+	private static final String jobName = ""+ChatColor.LIGHT_PURPLE+ChatColor.BOLD+"Magic"+
+											ChatColor.GREEN+ChatColor.BOLD+"Doctor";
 
 	public MagicDoctor(OfflinePlayer player) {
 		super(player);
