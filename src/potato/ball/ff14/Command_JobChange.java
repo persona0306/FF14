@@ -5,6 +5,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import net.md_5.bungee.api.ChatColor;
+
 public class Command_JobChange implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String index, String[] args) {
@@ -21,15 +23,21 @@ public class Command_JobChange implements CommandExecutor {
 		Job job;
 		if (args[0].equalsIgnoreCase("Knight")) {
 			job = new Knight(player);
-			sender.sendMessage("ジョブを変更しました");
+			sender.sendMessage("ジョブを"+ChatColor.BLUE+ChatColor.BOLD+"Knight"+
+								ChatColor.WHITE+"に変更しました");
 		}else if (args[0].equalsIgnoreCase("MagicDoctor")) {
 			job = new MagicDoctor(player);
-			sender.sendMessage("ジョブを変更しました");
+			sender.sendMessage("ジョブを"+ChatColor.LIGHT_PURPLE+ChatColor.BOLD+"Magic"+
+								ChatColor.GREEN+ChatColor.BOLD+"Doctor"+
+								ChatColor.WHITE+"に変更しました");
+		}else if (args[0].equalsIgnoreCase("UndeadHunter")) {
+			job = new UndeadHunter(player);
+			sender.sendMessage("ジョブを"+ChatColor.DARK_PURPLE+ChatColor.BOLD+"Undead"+
+								ChatColor.GOLD+ChatColor.BOLD+"Hunter"+
+								ChatColor.WHITE+"に変更しました");
 		}else {
 			sender.sendMessage("そのジョブは存在しません");
-			sender.sendMessage("\nジョブ一覧");
-			sender.sendMessage("\nKnight");
-			sender.sendMessage("MagicDoctor");
+			
 			return true;
 		}
 		

@@ -17,3 +17,8 @@ commands:
     description: FinalFantasy Command
     usage: /<command>
     default: true
+  joblist:
+    aliases: [joblist,jl]
+    description: FinalFantasy Command
+    usage: /<command>
+    default: true
