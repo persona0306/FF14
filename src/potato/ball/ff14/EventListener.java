@@ -23,7 +23,12 @@ public class EventListener implements Listener {
 		//ここから処理を書く
 
 		e.getPlayer().sendMessage("PlayerInteractEventが発動！ Action:" + e.getAction());
-
+		
+		PlayerData playerData = PlayerData.get(e.getPlayer());
+		
+		int actionNumber = e.getPlayer().getInventory().getHeldItemSlot();
+		
+		playerData.getJob().action(actionNumber);
 		//ここまで処理を書く
 	}
 	

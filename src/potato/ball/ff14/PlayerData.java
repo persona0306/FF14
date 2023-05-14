@@ -51,6 +51,7 @@ public class PlayerData {
 	public void setJob(Job job) {
 		this.job = job;
 		setStats(job.getBaseStats());
+		job.setHotbar();
 		
 	}
 	

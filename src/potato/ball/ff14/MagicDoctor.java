@@ -1,6 +1,9 @@
 package potato.ball.ff14;
 
+import java.util.List;
+
 import org.bukkit.OfflinePlayer;
+import org.bukkit.inventory.ItemStack;
 
 import net.md_5.bungee.api.ChatColor;
 
@@ -21,5 +24,17 @@ public class MagicDoctor extends Job {
 	public String getName() {
 		return jobName;
 	
+	}
+
+	@Override
+	protected List<ItemStack> getHotbarContents() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	@Override
+	public void action(int actionNumber) {
+		// TODO 自動生成されたメソッド・スタブ
+		
 	}
 }
