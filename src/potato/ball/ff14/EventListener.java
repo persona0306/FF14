@@ -29,7 +29,7 @@ public class EventListener implements Listener {
 		int actionNumber = e.getPlayer().getInventory().getHeldItemSlot();
 		
 		playerData.getJob().action(actionNumber);
-		//ここまで処理を書く
+		
 	}
 	
 	@EventHandler
@@ -46,12 +46,43 @@ public class EventListener implements Listener {
 		PlayerStats playerStats = playerData.getStats();
 		
 		e.setDamage(playerStats.getAtk());
-		//ここまで処理を書く
 		
 		
 	}
-	
 
+	@SuppressWarnings("deprecation")
+	@EventHandler
+	public void onHpUpdate(HpUpdateEvent e) {
+
+		if(!(e.getPlayer().isOnline())){
+			return;
+		
+		}
+		
+		e.getPlayer().getPlayer().setMaxHealth(e.getTo()/50);
+
+	}
+	
+	@SuppressWarnings("deprecation")
+	@EventHandler
+	public void onMpUpdate(MpUpdateEvent e) {
+
+		if(!(e.getPlayer().isOnline())){
+			return;
+		
+		}
+	}
+	
+	@SuppressWarnings("deprecation")
+	@EventHandler
+	public void onAtkUpdate(AtkUpdateEvent e) {
+
+		if(!(e.getPlayer().isOnline())){
+			return;
+		
+		}
+	}
+	
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onDefUpdate(DefUpdateEvent e) {
@@ -82,21 +113,37 @@ public class EventListener implements Listener {
 		boots.setItemMeta(bootsMeta);
 		
 	}
-
 	
 	@SuppressWarnings("deprecation")
 	@EventHandler
-	public void onHpUpdate(HpUpdateEvent e) {
+	public void onIntUpdate(IntUpdateEvent e) {
 
 		if(!(e.getPlayer().isOnline())){
 			return;
-		
+			
 		}
-		
-		e.getPlayer().getPlayer().setMaxHealth(e.getTo()/50);
-
 	}
+	
+	@SuppressWarnings("deprecation")
+	@EventHandler
+	public void onMindUpdate(MindUpdateEvent e) {
 
+		if(!(e.getPlayer().isOnline())){
+			return;
+			
+		}
+	}
+	
+	
+	@SuppressWarnings("deprecation")
+	@EventHandler
+	public void onCritUpdate(CritUpdateEvent e) {
+
+		if(!(e.getPlayer().isOnline())){
+			return;
+			
+		}
+	}
 	
 	public static void main(String[] args) {
 		

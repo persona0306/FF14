@@ -65,6 +65,25 @@ public class PlayerData {
 		stats.setHp(hpUpdateEvent.getTo());
 		
 		
+		
+		int mpFrom = this.stats == null ? 0 : this.stats.getMp();
+		
+		MpUpdateEvent mpUpdateEvent = new MpUpdateEvent(getPlayer(), mpFrom, stats.getMp());
+		Bukkit.getPluginManager().callEvent(mpUpdateEvent);
+		
+		stats.setMp(mpUpdateEvent.getTo());
+		
+		
+		
+		int atkFrom = this.stats == null ? 0 : this.stats.getHp();
+		
+		AtkUpdateEvent atkUpdateEvent = new AtkUpdateEvent(getPlayer(), atkFrom, stats.getAtk());
+		Bukkit.getPluginManager().callEvent(atkUpdateEvent);
+		
+		stats.setAtk(atkUpdateEvent.getTo());
+		
+		
+		
 		int defFrom = this.stats == null ? 0 : this.stats.getHp();
 		
 		DefUpdateEvent defUpdateEvent = new DefUpdateEvent(getPlayer(), defFrom, stats.getDef());
@@ -72,6 +91,38 @@ public class PlayerData {
 		
 		stats.setDef(defUpdateEvent.getTo());
 		
+		
+		
+		int intFrom = this.stats == null ? 0 : this.stats.getIntelligence();
+		
+		IntUpdateEvent intUpdateEvent = new IntUpdateEvent(getPlayer(), intFrom, 
+										stats.getIntelligence());
+		
+		Bukkit.getPluginManager().callEvent(intUpdateEvent);
+		
+		stats.setIntelligence(intUpdateEvent.getTo());
+		
+		
+		
+		int mindFrom = this.stats == null ? 0 : this.stats.getMind();
+		
+		MindUpdateEvent mindUpdateEvent = new MindUpdateEvent(getPlayer(), mindFrom, 
+										stats.getMind());
+		
+		Bukkit.getPluginManager().callEvent(mindUpdateEvent);
+		
+		stats.setMind(mindUpdateEvent.getTo());
+		
+		
+		
+		int critFrom = this.stats == null ? 0 : this.stats.getCrit();
+		
+		CritUpdateEvent critUpdateEvent = new CritUpdateEvent(getPlayer(), critFrom, 
+										stats.getCrit());
+		
+		Bukkit.getPluginManager().callEvent(critUpdateEvent);
+		
+		stats.setCrit(critUpdateEvent.getTo());
 		
 		this.stats = stats;
 		
