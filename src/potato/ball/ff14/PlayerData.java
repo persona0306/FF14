@@ -26,7 +26,7 @@ public class PlayerData {
 	
 	private PlayerData(OfflinePlayer player) {
 		uuid = player.getUniqueId();
-		setJob(new Knight(player));
+		setJob(new None(player));
 		
 		playerDataMap.put(uuid, this);
 		
