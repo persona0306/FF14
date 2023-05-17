@@ -1,9 +1,12 @@
 package potato.ball.ff14;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import net.md_5.bungee.api.ChatColor;
 
@@ -11,6 +14,34 @@ public class UndeadHunter extends Job {
 	private static final String jobName = ""+ChatColor.DARK_PURPLE+ChatColor.BOLD+"Undead"+
 											ChatColor.GOLD+ChatColor.BOLD+"Hunter";
 
+	private static final ArrayList<ItemStack> hotbarContents = new ArrayList<>();
+	
+	static {
+		
+		ItemStack sword = new ItemStack(Material.DIAMOND_SWORD);
+		
+		ItemMeta swordMeta =  sword.getItemMeta();
+		
+		swordMeta.setCustomModelData(5);
+		
+		swordMeta.setDisplayName(""+ChatColor.AQUA+ChatColor.BOLD+"ハントランス");
+		
+		sword.setItemMeta(swordMeta);
+		
+		hotbarContents.add(sword);
+		
+		ItemStack skill2 = new ItemStack(Material.NAME_TAG);
+		
+		ItemMeta skill2Meta = skill2.getItemMeta();
+		
+		skill2Meta.setCustomModelData(3);
+		
+		skill2.setItemMeta(skill2Meta);
+		
+		hotbarContents.add(skill2);
+		
+	}
+	
 	public UndeadHunter(OfflinePlayer player) {
 		super(player);
 	}
@@ -28,8 +59,8 @@ public class UndeadHunter extends Job {
 
 	@Override
 	protected List<ItemStack> getHotbarContents() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return hotbarContents;
+		
 	}
 
 	@Override
