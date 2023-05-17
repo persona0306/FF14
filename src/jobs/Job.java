@@ -1,4 +1,4 @@
-package potato.ball.ff14;
+package jobs;
 
 import java.util.List;
 import java.util.UUID;
@@ -8,6 +8,8 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
+
+import potato.ball.ff14.PlayerStats;
 
 public abstract class Job {
 	

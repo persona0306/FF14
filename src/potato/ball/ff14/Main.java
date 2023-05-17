@@ -3,6 +3,11 @@ package potato.ball.ff14;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import commands.Command_FF;
+import commands.Command_JobChange;
+import commands.Command_Job_list;
+import commands.Command_Stats;
+
 public class Main extends JavaPlugin {
 	public static Main instance;
 

@@ -1,4 +1,4 @@
-package potato.ball.ff14;
+package commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;

@@ -1,4 +1,4 @@
-package potato.ball.ff14;
+package jobs;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +13,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 
 import net.md_5.bungee.api.ChatColor;
+import potato.ball.ff14.PlayerStats;
 
 public class Knight extends Job {
 	private static final String jobName = ""+ChatColor.BLUE+ChatColor.BOLD+"Knight";

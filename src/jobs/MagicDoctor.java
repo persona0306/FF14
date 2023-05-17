@@ -1,4 +1,4 @@
-package potato.ball.ff14;
+package jobs;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,10 +9,11 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import net.md_5.bungee.api.ChatColor;
+import potato.ball.ff14.PlayerStats;
 
-public class UndeadHunter extends Job {
-	private static final String jobName = ""+ChatColor.DARK_PURPLE+ChatColor.BOLD+"Undead"+
-											ChatColor.GOLD+ChatColor.BOLD+"Hunter";
+public class MagicDoctor extends Job {
+	private static final String jobName = ""+ChatColor.LIGHT_PURPLE+ChatColor.BOLD+"Magic"+
+											ChatColor.GREEN+ChatColor.BOLD+"Doctor";
 
 	private static final ArrayList<ItemStack> hotbarContents = new ArrayList<>();
 	
@@ -22,9 +23,11 @@ public class UndeadHunter extends Job {
 		
 		ItemMeta swordMeta =  sword.getItemMeta();
 		
-		swordMeta.setCustomModelData(5);
+		swordMeta.setCustomModelData(3);
 		
-		swordMeta.setDisplayName(""+ChatColor.AQUA+ChatColor.BOLD+"ハントランス");
+		swordMeta.setDisplayName(""+ChatColor.GREEN+ChatColor.BOLD+"注射剣"+
+								ChatColor.RESET+"・"+ChatColor.GOLD+ChatColor.BOLD+
+								"剣撃");
 		
 		sword.setItemMeta(swordMeta);
 		
@@ -34,7 +37,7 @@ public class UndeadHunter extends Job {
 		
 		ItemMeta skill2Meta = skill2.getItemMeta();
 		
-		skill2Meta.setCustomModelData(3);
+		skill2Meta.setCustomModelData(2);
 		
 		skill2.setItemMeta(skill2Meta);
 		
@@ -42,16 +45,16 @@ public class UndeadHunter extends Job {
 		
 	}
 	
-	public UndeadHunter(OfflinePlayer player) {
+	public MagicDoctor(OfflinePlayer player) {
 		super(player);
 	}
-
+	
 	@Override
 	public PlayerStats getBaseStats() {
-		PlayerStats playerStats = new PlayerStats(getPlayer(),700, 100, 60, 60, 60, 50);
+		PlayerStats playerStats = new PlayerStats(getPlayer(),500, 50, 40, 60, 100, 50);
 		return playerStats;
 	}
-
+	
 	public String getName() {
 		return jobName;
 	

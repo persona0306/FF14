@@ -1,22 +1,18 @@
-package potato.ball.ff14;
+package jobs;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.OfflinePlayer;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import net.md_5.bungee.api.ChatColor;
+import potato.ball.ff14.PlayerStats;
 
 public class None extends Job {
 	private static final String jobName = ""+ChatColor.GRAY+"none";
 	
 	private static final ArrayList<ItemStack> hotbarContents = new ArrayList<>();
-	
-	static {
-		
-	}
 
 	public None(OfflinePlayer player) {
 		super(player);
@@ -42,19 +38,6 @@ public class None extends Job {
 	@Override
 	public void action(int actionNumber) {
 		
-		if (!getPlayer().isOnline()) return;
-		
-		Player player = getPlayer().getPlayer();
-		
-		if(actionNumber == 1) {
-
-				
-		}
-		
-		if(actionNumber == 2) {
-			
-		
 		}
 	}
-}
 

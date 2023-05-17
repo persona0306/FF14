@@ -6,6 +6,16 @@ import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 
+import jobs.Job;
+import jobs.None;
+import updateEvents.AtkUpdateEvent;
+import updateEvents.CritUpdateEvent;
+import updateEvents.DefUpdateEvent;
+import updateEvents.HpUpdateEvent;
+import updateEvents.IntUpdateEvent;
+import updateEvents.MindUpdateEvent;
+import updateEvents.MpUpdateEvent;
+
 public class PlayerData {
 	private static final HashMap<UUID,PlayerData> playerDataMap = new HashMap<>();
 	

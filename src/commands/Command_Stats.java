@@ -1,10 +1,14 @@
-package potato.ball.ff14;
+package commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import jobs.Job;
+import potato.ball.ff14.PlayerData;
+import potato.ball.ff14.PlayerStats;
 
 public class Command_Stats implements CommandExecutor {
 	@Override
@@ -24,9 +28,6 @@ public class Command_Stats implements CommandExecutor {
 		Job playerJob = playerData.getJob();
 		
 		PlayerStats playerStats = playerData.getStats();
-		
-		String jobName = playerJob.getName();
-		
 		
 
 		sender.sendMessage(""+ChatColor.AQUA+ChatColor.BOLD+ChatColor.UNDERLINE+
@@ -49,7 +50,7 @@ public class Command_Stats implements CommandExecutor {
 							"          "+playerStats.getDef());
 		
 		sender.sendMessage("      "+ChatColor.DARK_PURPLE+ChatColor.BOLD+"INT"+
-							ChatColor.GREEN+ChatColor.BOLD+"      MIND");
+							ChatColor.GREEN+ChatColor.BOLD+"       MIND");
 		
 		sender.sendMessage("          "+ChatColor.WHITE+playerStats.getIntelligence()+
 							"          "+playerStats.getMind());

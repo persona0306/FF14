@@ -1,10 +1,10 @@
-package potato.ball.ff14;
+package updateEvents;
 
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
-public class CritUpdateEvent extends Event {
+public class AtkUpdateEvent extends Event {
 	private static final HandlerList handlers = new HandlerList();
 	
 	public static HandlerList getHandlerList() {
@@ -20,7 +20,7 @@ public class CritUpdateEvent extends Event {
 		return handlers;
 	}
 
-	public CritUpdateEvent (OfflinePlayer player , int from , int to ) {
+	public AtkUpdateEvent (OfflinePlayer player , int from , int to ) {
 		this.player = player;
 		this.from = from;
 		this.to = to;

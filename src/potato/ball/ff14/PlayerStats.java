@@ -5,6 +5,14 @@ import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 
+import updateEvents.AtkUpdateEvent;
+import updateEvents.CritUpdateEvent;
+import updateEvents.DefUpdateEvent;
+import updateEvents.HpUpdateEvent;
+import updateEvents.IntUpdateEvent;
+import updateEvents.MindUpdateEvent;
+import updateEvents.MpUpdateEvent;
+
 public class PlayerStats {
 	private UUID uuid;
 	private int maxhp;

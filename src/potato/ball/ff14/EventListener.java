@@ -16,6 +16,14 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import updateEvents.AtkUpdateEvent;
+import updateEvents.CritUpdateEvent;
+import updateEvents.DefUpdateEvent;
+import updateEvents.HpUpdateEvent;
+import updateEvents.IntUpdateEvent;
+import updateEvents.MindUpdateEvent;
+import updateEvents.MpUpdateEvent;
+
 public class EventListener implements Listener {
 	@EventHandler
 	public void onInteract(PlayerInteractEvent e) {

@@ -1,11 +1,16 @@
-package potato.ball.ff14;
+package commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import jobs.Job;
+import jobs.Knight;
+import jobs.MagicDoctor;
+import jobs.UndeadHunter;
 import net.md_5.bungee.api.ChatColor;
+import potato.ball.ff14.PlayerData;
 
 public class Command_JobChange implements CommandExecutor {
 	@Override
