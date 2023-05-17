@@ -27,9 +27,12 @@ public class Knight extends Job {
 		
 		swordMeta.setCustomModelData(1);
 		
+		swordMeta.setDisplayName(""+ChatColor.BLUE+ChatColor.BOLD+"ナイトソード");
+		
 		sword.setItemMeta(swordMeta);
 		
 		hotbarContents.add(sword);
+		
 		
 		ItemStack skill2 = new ItemStack(Material.NAME_TAG);
 		
@@ -40,6 +43,8 @@ public class Knight extends Job {
 		skill2.setItemMeta(skill2Meta);
 		
 		hotbarContents.add(skill2);
+		
+		
 		
 	}
 
@@ -77,10 +82,12 @@ public class Knight extends Job {
 			Vector velocity = player.getLocation().getDirection();
 			
 			tnt.setVelocity(velocity.multiply(3));
+				
+		}
+		
+		if(actionNumber == 2) {
 			
-			
+		
 		}
 	}
-	
-	
 }
