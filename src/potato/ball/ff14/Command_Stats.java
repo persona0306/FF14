@@ -49,7 +49,7 @@ public class Command_Stats implements CommandExecutor {
 							"          "+playerStats.getDef());
 		
 		sender.sendMessage("      "+ChatColor.DARK_PURPLE+ChatColor.BOLD+"INT"+
-							ChatColor.GREEN+ChatColor.BOLD+"       MND");
+							ChatColor.GREEN+ChatColor.BOLD+"      MIND");
 		
 		sender.sendMessage("          "+ChatColor.WHITE+playerStats.getIntelligence()+
 							"          "+playerStats.getMind());

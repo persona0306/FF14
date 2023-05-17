@@ -54,7 +54,7 @@ public class Knight extends Job {
 
 	@Override
 	public PlayerStats getBaseStats() {
-		PlayerStats playerStats = new PlayerStats(getPlayer(),70, 120, 1500, 40, 30, 50);
+		PlayerStats playerStats = new PlayerStats(getPlayer(),1200, 70, 100, 40, 30, 50);
 		return playerStats;
 	}
 

@@ -48,7 +48,7 @@ public class UndeadHunter extends Job {
 
 	@Override
 	public PlayerStats getBaseStats() {
-		PlayerStats playerStats = new PlayerStats(getPlayer(),120, 60, 1000, 60, 60, 50);
+		PlayerStats playerStats = new PlayerStats(getPlayer(),700, 100, 60, 60, 60, 50);
 		return playerStats;
 	}
 
