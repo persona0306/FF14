@@ -37,7 +37,7 @@ public class MagicDoctor extends Job {
 		
 		ItemMeta skill2Meta = skill2.getItemMeta();
 		
-		skill2Meta.setCustomModelData(2);
+		skill2Meta.setCustomModelData(3);
 		
 		skill2.setItemMeta(skill2Meta);
 		
@@ -51,7 +51,7 @@ public class MagicDoctor extends Job {
 	
 	@Override
 	public PlayerStats getBaseStats() {
-		PlayerStats playerStats = new PlayerStats(getPlayer(),500, 50, 40, 60, 100, 50);
+		PlayerStats playerStats = new PlayerStats(getPlayer(),5000, 50, 40, 60, 100, 50);
 		return playerStats;
 	}
 	

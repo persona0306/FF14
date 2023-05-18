@@ -35,7 +35,7 @@ public class UndeadHunter extends Job {
 		
 		ItemMeta skill2Meta = skill2.getItemMeta();
 		
-		skill2Meta.setCustomModelData(3);
+		skill2Meta.setCustomModelData(4);
 		
 		skill2.setItemMeta(skill2Meta);
 		
@@ -49,7 +49,7 @@ public class UndeadHunter extends Job {
 
 	@Override
 	public PlayerStats getBaseStats() {
-		PlayerStats playerStats = new PlayerStats(getPlayer(),700, 100, 60, 60, 60, 50);
+		PlayerStats playerStats = new PlayerStats(getPlayer(),7000, 100, 60, 60, 60, 50);
 		return playerStats;
 	}
 

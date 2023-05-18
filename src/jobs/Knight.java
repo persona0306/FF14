@@ -39,7 +39,7 @@ public class Knight extends Job {
 		
 		ItemMeta skill2Meta = skill2.getItemMeta();
 		
-		skill2Meta.setCustomModelData(1);
+		skill2Meta.setCustomModelData(2);
 		
 		skill2.setItemMeta(skill2Meta);
 		
@@ -55,7 +55,7 @@ public class Knight extends Job {
 
 	@Override
 	public PlayerStats getBaseStats() {
-		PlayerStats playerStats = new PlayerStats(getPlayer(),1200, 70, 100, 40, 30, 50);
+		PlayerStats playerStats = new PlayerStats(getPlayer(),12000, 70, 100, 40, 30, 50);
 		return playerStats;
 	}
 

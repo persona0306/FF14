@@ -30,7 +30,7 @@ public class EventListener implements Listener {
 		//プレイヤーがクリックしたり感圧版を踏んだりしたときのイベント。
 		//ここから処理を書く
 
-		e.getPlayer().sendMessage("PlayerInteractEventが発動！ Action:" + e.getAction());
+		e.getPlayer().sendMessage("Action:" + e.getAction());
 		
 		PlayerData playerData = PlayerData.get(e.getPlayer());
 		
@@ -67,7 +67,7 @@ public class EventListener implements Listener {
 		
 		}
 		
-		e.getPlayer().getPlayer().setMaxHealth(e.getTo()/50);
+		e.getPlayer().getPlayer().setMaxHealth(e.getTo()/500);
 
 	}
 	
