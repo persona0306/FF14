@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import jobs.Job;
 import jobs.Knight;
 import jobs.MagicDoctor;
+import jobs.PixieArcher;
 import jobs.UndeadHunter;
 import net.md_5.bungee.api.ChatColor;
 import potato.ball.ff14.PlayerData;
@@ -48,6 +49,14 @@ public class Command_JobChange implements CommandExecutor {
 			sender.sendMessage("ジョブを"+ChatColor.DARK_PURPLE+ChatColor.BOLD+"Undead"+
 								ChatColor.GOLD+ChatColor.BOLD+"Hunter"+
 								ChatColor.WHITE+"に変更しました");
+		
+		}else if (args[0].equalsIgnoreCase("PixieArcher")||
+				  args[0].equalsIgnoreCase("PA")) {
+			job = new PixieArcher(player);
+			
+			sender.sendMessage("ジョブを"+ChatColor.AQUA+ChatColor.BOLD+"Pixie"
+								+ChatColor.YELLOW+ChatColor.BOLD+"Archer"
+								+ChatColor.WHITE+"に変更しました");
 			
 		}else {
 			sender.sendMessage("そのジョブは存在しません");

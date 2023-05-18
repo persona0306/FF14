@@ -48,6 +48,9 @@ public class Command_Job_list implements CommandExecutor {
 		
 		sender.sendMessage("\n"+ChatColor.AQUA+ChatColor.UNDERLINE+" 遠隔 ");
 		
+		sender.sendMessage("\n"+ChatColor.AQUA+ChatColor.BOLD+"Pixie"
+							+ChatColor.YELLOW+ChatColor.BOLD+"Archer");
+		
 		
 		sender.sendMessage("\n"+ChatColor.LIGHT_PURPLE+ChatColor.UNDERLINE+" 魔法 ");
 		
