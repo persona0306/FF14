@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.TNTPrimed;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.util.Vector;
 
 import net.md_5.bungee.api.ChatColor;
@@ -20,13 +23,20 @@ public class Knight extends Job {
 	
 	private static final ArrayList<ItemStack> hotbarContents = new ArrayList<>();
 	
+	
+	
 	static {
 		
 		ItemStack sword = new ItemStack(Material.DIAMOND_SWORD);
 		
 		ItemMeta swordMeta =  sword.getItemMeta();
 		
-		swordMeta.setCustomModelData(1);
+		PersistentDataContainer swordDataContainer = swordMeta.getPersistentDataContainer();
+		
+		swordDataContainer.set(NamespacedKey.fromString("action"), PersistentDataType.INTEGER, 
+								1);
+		
+		swordMeta.setCustomModelData(1111);
 		
 		swordMeta.setDisplayName(""+ChatColor.BLUE+ChatColor.BOLD+"ナイトソード");
 		

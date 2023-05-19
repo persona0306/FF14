@@ -23,7 +23,7 @@ public class MagicDoctor extends Job {
 		
 		ItemMeta swordMeta =  sword.getItemMeta();
 		
-		swordMeta.setCustomModelData(3);
+		swordMeta.setCustomModelData(2221);
 		
 		swordMeta.setDisplayName(""+ChatColor.GREEN+ChatColor.BOLD+"注射剣"+
 								ChatColor.RESET+"・"+ChatColor.GOLD+ChatColor.BOLD+

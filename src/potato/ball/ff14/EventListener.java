@@ -3,6 +3,7 @@ package potato.ball.ff14;
 import java.util.UUID;
 
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.attribute.AttributeModifier.Operation;
@@ -15,6 +16,7 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataType;
 
 import updateEvents.AtkUpdateEvent;
 import updateEvents.CritUpdateEvent;
@@ -34,7 +36,13 @@ public class EventListener implements Listener {
 		
 		PlayerData playerData = PlayerData.get(e.getPlayer());
 		
-		int actionNumber = e.getPlayer().getInventory().getHeldItemSlot();
+		ItemStack item = e.getPlayer().getInventory().getItemInMainHand();
+		
+		ItemMeta itemMeta = item.getItemMeta();
+		
+		int actionNumber = itemMeta.getPersistentDataContainer().get(
+							NamespacedKey.fromString("action"),
+							PersistentDataType.INTEGER);
 		
 		playerData.getJob().action(actionNumber);
 		

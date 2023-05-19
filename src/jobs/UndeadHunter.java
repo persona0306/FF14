@@ -23,7 +23,7 @@ public class UndeadHunter extends Job {
 		
 		ItemMeta swordMeta =  sword.getItemMeta();
 		
-		swordMeta.setCustomModelData(5);
+		swordMeta.setCustomModelData(3331);
 		
 		swordMeta.setDisplayName(""+ChatColor.AQUA+ChatColor.BOLD+"ハントランス");
 		

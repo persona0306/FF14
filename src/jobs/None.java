@@ -20,7 +20,7 @@ public class None extends Job {
 
 	@Override
 	public PlayerStats getBaseStats() {
-		PlayerStats playerStats = new PlayerStats(getPlayer(),100, 10, 10, 10, 10, 10);
+		PlayerStats playerStats = new PlayerStats(getPlayer(),1000, 10, 10, 10, 10, 10);
 		return playerStats;
 	}
 
