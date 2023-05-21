@@ -5,14 +5,6 @@ import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 
-import updateEvents.AtkUpdateEvent;
-import updateEvents.CritUpdateEvent;
-import updateEvents.DefUpdateEvent;
-import updateEvents.HpUpdateEvent;
-import updateEvents.IntUpdateEvent;
-import updateEvents.MindUpdateEvent;
-import updateEvents.MpUpdateEvent;
-
 public class PlayerStats {
 	private UUID uuid;
 	private int maxhp;
@@ -76,23 +68,6 @@ public class PlayerStats {
 		Bukkit.getPluginManager().callEvent(event);
 		
 		this.hp = event.getTo();
-	
-	}
-	
-	public void setMp(int mp) {
-		MpUpdateEvent event = new MpUpdateEvent(getPlayer(), this.mp, mp);
-		Bukkit.getPluginManager().callEvent(event);
-		
-		this.mp = event.getTo();
-	
-	}
-	
-	public void setAtk(int atk) {
-		
-		AtkUpdateEvent event = new AtkUpdateEvent(getPlayer(), this.atk, atk);
-		Bukkit.getPluginManager().callEvent(event);
-		
-		this.atk = event.getTo();
 		
 	}
 	
@@ -102,35 +77,6 @@ public class PlayerStats {
 		Bukkit.getPluginManager().callEvent(event);
 		
 		this.def = event.getTo();
-		
-	}
-	
-	public void setIntelligence(int intelligence) {
-		
-		IntUpdateEvent event = new IntUpdateEvent(getPlayer(), this.intelligence, intelligence);
-		Bukkit.getPluginManager().callEvent(event);
-		
-		this.intelligence = event.getTo();
-		
-	}
-	
-	public void setMind(int mind) {
-
-		MindUpdateEvent event = new MindUpdateEvent(getPlayer(), this.mind, mind);
-		Bukkit.getPluginManager().callEvent(event);
-		
-		this.mind = event.getTo();
-		
-		
-	}
-	
-	public void setCrit(int crit) {
-
-		CritUpdateEvent event = new CritUpdateEvent(getPlayer(), this.crit, crit);
-		Bukkit.getPluginManager().callEvent(event);
-		
-		this.crit = event.getTo();
-		
 		
 	}
 }

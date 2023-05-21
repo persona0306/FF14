@@ -1,7 +1,6 @@
 package jobs;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -18,14 +17,29 @@ import org.bukkit.util.Vector;
 import net.md_5.bungee.api.ChatColor;
 import potato.ball.ff14.PlayerStats;
 
-public class Knight extends Job {
-	private static final String jobName = ""+ChatColor.BLUE+ChatColor.BOLD+"Knight";
+public class Paladin extends Job {
+	private static final String jobName = ""+ChatColor.YELLOW+ChatColor.BOLD+"Paladin";
 	
-	private static final ArrayList<ItemStack> hotbarContents = new ArrayList<>();
-	
-	
+	private static final HashMap<Integer,ItemStack> inventoryContents =
+													new HashMap<Integer,ItemStack>();
 	
 	static {
+		
+		ItemStack shield = new ItemStack(Material.SHIELD);
+		
+		ItemMeta shieldMeta = shield.getItemMeta();
+		
+		shieldMeta.setCustomModelData(1);
+		
+		shieldMeta.setDisplayName(""+ChatColor.BLUE+ChatColor.BOLD+"ガード"+
+									ChatColor.WHITE+ChatColor.BOLD+"＆"+
+									ChatColor.GOLD+ChatColor.BOLD+"チャージ");
+		
+		shield.setItemMeta(shieldMeta);
+		
+		inventoryContents.put(40,shield);
+		
+		
 		
 		ItemStack sword = new ItemStack(Material.DIAMOND_SWORD);
 		
@@ -33,8 +47,8 @@ public class Knight extends Job {
 		
 		PersistentDataContainer swordDataContainer = swordMeta.getPersistentDataContainer();
 		
-		swordDataContainer.set(NamespacedKey.fromString("action"), PersistentDataType.INTEGER, 
-								1);
+		swordDataContainer.set(NamespacedKey.fromString("action"), PersistentDataType.
+								INTEGER, 1);
 		
 		swordMeta.setCustomModelData(1111);
 		
@@ -42,24 +56,29 @@ public class Knight extends Job {
 		
 		sword.setItemMeta(swordMeta);
 		
-		hotbarContents.add(sword);
+		inventoryContents.put(0,sword);
 		
 		
-		ItemStack skill2 = new ItemStack(Material.NAME_TAG);
 		
-		ItemMeta skill2Meta = skill2.getItemMeta();
+		ItemStack jobIcon = new ItemStack(Material.NAME_TAG);
 		
-		skill2Meta.setCustomModelData(2);
+		ItemMeta jobIconMeta = jobIcon.getItemMeta();
 		
-		skill2.setItemMeta(skill2Meta);
+		jobIconMeta.setCustomModelData(2);
 		
-		hotbarContents.add(skill2);
+		jobIconMeta.setDisplayName(""+ChatColor.BLUE+ChatColor.BOLD+"タンク"+
+									ChatColor.WHITE+ChatColor.BOLD+" : "+
+									ChatColor.YELLOW+ChatColor.BOLD+"聖騎士");
+		
+		jobIcon.setItemMeta(jobIconMeta);
+		
+		inventoryContents.put(22,jobIcon);
 		
 		
 		
 	}
 
-	public Knight(OfflinePlayer player) {
+	public Paladin(OfflinePlayer player) {
 		super(player);
 	}
 
@@ -75,9 +94,9 @@ public class Knight extends Job {
 	}
 
 	@Override
-	protected List<ItemStack> getHotbarContents() {
+	protected HashMap<Integer,ItemStack> getInventoryContents() {
 		
-		return hotbarContents;
+		return inventoryContents;
 	}
 
 	@Override

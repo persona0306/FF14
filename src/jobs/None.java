@@ -1,7 +1,6 @@
 package jobs;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 import org.bukkit.OfflinePlayer;
 import org.bukkit.inventory.ItemStack;
@@ -12,7 +11,8 @@ import potato.ball.ff14.PlayerStats;
 public class None extends Job {
 	private static final String jobName = ""+ChatColor.GRAY+"none";
 	
-	private static final ArrayList<ItemStack> hotbarContents = new ArrayList<>();
+	private static final HashMap<Integer,ItemStack> inventoryContents =
+													new HashMap<Integer,ItemStack>();
 
 	public None(OfflinePlayer player) {
 		super(player);
@@ -30,9 +30,9 @@ public class None extends Job {
 	}
 
 	@Override
-	protected List<ItemStack> getHotbarContents() {
+	protected HashMap<Integer,ItemStack> getInventoryContents() {
 		
-		return hotbarContents;
+		return inventoryContents;
 	}
 
 	@Override

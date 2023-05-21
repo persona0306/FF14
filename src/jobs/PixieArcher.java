@@ -1,7 +1,6 @@
 package jobs;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
@@ -16,7 +15,8 @@ public class PixieArcher extends Job {
 	private static final String jobName = ""+ChatColor.AQUA+ChatColor.BOLD+"Pixie"
 											+ChatColor.YELLOW+ChatColor.BOLD+"Archer";
 	
-	private static final ArrayList<ItemStack> hotbarContents = new ArrayList<>();
+	private static final HashMap<Integer,ItemStack> inventoryContents =
+													new HashMap<Integer,ItemStack>();
 	
 	static {
 		
@@ -26,24 +26,31 @@ public class PixieArcher extends Job {
 		
 		bowMeta.setCustomModelData(1);
 		
-		bowMeta.setDisplayName(""+ChatColor.AQUA+ChatColor.BOLD+"マジックアロー"
+		bowMeta.setDisplayName(""+ChatColor.YELLOW+ChatColor.BOLD+"マジックアロー"
 								+ChatColor.WHITE+ChatColor.BOLD+"・"+
 								ChatColor.RED+ChatColor.BOLD+"ファイア");
 		
 		bow.setItemMeta(bowMeta);
 		
-		hotbarContents.add(bow);
+		inventoryContents.put(0,bow);
 		
 		
-		ItemStack skill2 = new ItemStack(Material.NAME_TAG);
 		
-		ItemMeta skill2Meta = skill2.getItemMeta();
+		ItemStack jobIcon = new ItemStack(Material.NAME_TAG);
 		
-		skill2Meta.setCustomModelData(5);
+		ItemMeta jobIconMeta = jobIcon.getItemMeta();
 		
-		skill2.setItemMeta(skill2Meta);
+		jobIconMeta.setCustomModelData(5);
 		
-		hotbarContents.add(skill2);
+		jobIconMeta.setDisplayName(""+ChatColor.AQUA+ChatColor.BOLD+"遠隔 "
+									+ChatColor.DARK_RED+ChatColor.BOLD+"ダメージ"+
+									ChatColor.WHITE+ChatColor.BOLD+" : "+
+									ChatColor.AQUA+ChatColor.BOLD+"精"+
+									ChatColor.YELLOW+ChatColor.BOLD+"弓士");
+		
+		jobIcon.setItemMeta(jobIconMeta);
+		
+		inventoryContents.put(22,jobIcon);
 		
 		
 		
@@ -65,9 +72,9 @@ public class PixieArcher extends Job {
 	}
 
 	@Override
-	protected List<ItemStack> getHotbarContents() {
+	protected HashMap<Integer,ItemStack> getInventoryContents() {
 		
-		return hotbarContents;
+		return inventoryContents;
 	}
 
 	@Override

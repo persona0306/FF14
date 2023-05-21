@@ -1,7 +1,6 @@
 package jobs;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
@@ -15,7 +14,8 @@ public class MagicDoctor extends Job {
 	private static final String jobName = ""+ChatColor.LIGHT_PURPLE+ChatColor.BOLD+"Magic"+
 											ChatColor.GREEN+ChatColor.BOLD+"Doctor";
 
-	private static final ArrayList<ItemStack> hotbarContents = new ArrayList<>();
+	private static final HashMap<Integer,ItemStack> inventoryContents =
+													new HashMap<Integer,ItemStack>();
 	
 	static {
 		
@@ -31,17 +31,24 @@ public class MagicDoctor extends Job {
 		
 		sword.setItemMeta(swordMeta);
 		
-		hotbarContents.add(sword);
+		inventoryContents.put(0,sword);
 		
-		ItemStack skill2 = new ItemStack(Material.NAME_TAG);
 		
-		ItemMeta skill2Meta = skill2.getItemMeta();
 		
-		skill2Meta.setCustomModelData(3);
+		ItemStack jobIcon = new ItemStack(Material.NAME_TAG);
 		
-		skill2.setItemMeta(skill2Meta);
+		ItemMeta jobIconMeta = jobIcon.getItemMeta();
 		
-		hotbarContents.add(skill2);
+		jobIconMeta.setCustomModelData(3);
+		
+		jobIconMeta.setDisplayName(""+ChatColor.GREEN+ChatColor.BOLD+"ヒーラー"+
+									ChatColor.WHITE+ChatColor.BOLD+" : "+
+									ChatColor.LIGHT_PURPLE+ChatColor.BOLD+"魔法"+
+									ChatColor.GREEN+ChatColor.BOLD+"医");
+		
+		jobIcon.setItemMeta(jobIconMeta);
+		
+		inventoryContents.put(22,jobIcon);
 		
 	}
 	
@@ -61,8 +68,8 @@ public class MagicDoctor extends Job {
 	}
 
 	@Override
-	protected List<ItemStack> getHotbarContents() {
-		return hotbarContents;
+	protected HashMap<Integer,ItemStack> getInventoryContents() {
+		return inventoryContents;
 		
 	}
 

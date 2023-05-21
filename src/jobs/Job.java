@@ -1,6 +1,6 @@
 package jobs;
 
-import java.util.List;
+import java.util.HashMap;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
@@ -21,7 +21,7 @@ public abstract class Job {
 		
 	}
 	
-	public void setHotbar() {
+	public void setInventory() {
 		
 		Player player = Bukkit.getPlayer(uuid);
 		
@@ -29,21 +29,16 @@ public abstract class Job {
 		
 		PlayerInventory inventory = player.getInventory();
 		
-		List<ItemStack> hotbarContents = getHotbarContents();
+		HashMap<Integer,ItemStack> inventoryContents = getInventoryContents();
 		
-		for(int i = 0; i < 9; i ++ ) {
-			
-			if (hotbarContents.size() < i + 1 ) break;
-			
-			ItemStack item = hotbarContents.get(i);
-			
-			inventory.setItem(i, item);
-			
-		}
+		inventoryContents.forEach((slot, item)->{
 		
+		inventory.setItem(slot, item);
+		
+		});
 	}
 	
-	protected abstract List<ItemStack> getHotbarContents();
+	protected abstract HashMap<Integer,ItemStack> getInventoryContents();
 	
 	public abstract PlayerStats getBaseStats();
 	

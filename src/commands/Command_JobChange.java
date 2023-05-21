@@ -6,9 +6,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import jobs.Job;
-import jobs.Knight;
 import jobs.MagicDoctor;
 import jobs.None;
+import jobs.Paladin;
 import jobs.PixieArcher;
 import jobs.UndeadHunter;
 import net.md_5.bungee.api.ChatColor;
@@ -28,11 +28,11 @@ public class Command_JobChange implements CommandExecutor {
 		Player player = (Player)sender;
 		
 		Job job;
-		if (args[0].equalsIgnoreCase("Knight") ||
-			args[0].equalsIgnoreCase("K")) {
-			job = new Knight(player);
+		if (args[0].equalsIgnoreCase("Paladin") ||
+			args[0].equalsIgnoreCase("P")) {
+			job = new Paladin(player);
 			
-			sender.sendMessage("ジョブを"+ChatColor.BLUE+ChatColor.BOLD+"Knight"+
+			sender.sendMessage("ジョブを"+ChatColor.YELLOW+ChatColor.BOLD+"Paladin"+
 								ChatColor.WHITE+"に変更しました");
 			
 		}else if (args[0].equalsIgnoreCase("MagicDoctor") ||

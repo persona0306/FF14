@@ -1,7 +1,6 @@
 package jobs;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
@@ -15,7 +14,8 @@ public class UndeadHunter extends Job {
 	private static final String jobName = ""+ChatColor.DARK_PURPLE+ChatColor.BOLD+"Undead"+
 											ChatColor.GOLD+ChatColor.BOLD+"Hunter";
 
-	private static final ArrayList<ItemStack> hotbarContents = new ArrayList<>();
+	private static final HashMap<Integer,ItemStack> inventoryContents =
+															new HashMap<Integer,ItemStack>();
 	
 	static {
 		
@@ -29,18 +29,44 @@ public class UndeadHunter extends Job {
 		
 		sword.setItemMeta(swordMeta);
 		
-		hotbarContents.add(sword);
+		inventoryContents.put(0,sword);
 		
-		ItemStack skill2 = new ItemStack(Material.NAME_TAG);
 		
-		ItemMeta skill2Meta = skill2.getItemMeta();
 		
-		skill2Meta.setCustomModelData(4);
+		ItemStack jobIcon = new ItemStack(Material.NAME_TAG);
 		
-		skill2.setItemMeta(skill2Meta);
+		ItemMeta jobIconMeta = jobIcon.getItemMeta();
 		
-		hotbarContents.add(skill2);
+		jobIconMeta.setCustomModelData(4);
 		
+		jobIconMeta.setDisplayName(""+ChatColor.RED+ChatColor.BOLD+"近接 "+
+									ChatColor.DARK_RED+ChatColor.BOLD+"ダメージ"+
+									ChatColor.WHITE+ChatColor.BOLD+" : "+
+									ChatColor.DARK_PURPLE+ChatColor.BOLD+"屍"+
+									ChatColor.GOLD+ChatColor.BOLD+"狩士");
+		
+		jobIcon.setItemMeta(jobIconMeta);
+		
+		inventoryContents.put(22,jobIcon);
+		
+		
+		
+		ItemStack prSymbol = new ItemStack(Material.PAPER);
+		
+		ItemMeta prSymbolMeta = prSymbol.getItemMeta();
+		
+		prSymbolMeta.setCustomModelData(3900);
+		
+		prSymbolMeta.setDisplayName(""+ChatColor.YELLOW+ChatColor.BOLD+"パスター"+
+									ChatColor.WHITE+ChatColor.BOLD+"＆"+
+									ChatColor.DARK_PURPLE+ChatColor.BOLD+"レネゲイズ"+
+									ChatColor.WHITE+ChatColor.BOLD+"シンボル "+
+									ChatColor.GOLD+ChatColor.BOLD+"トワイライト"+
+									ChatColor.WHITE+ChatColor.BOLD+"シンボル ");
+		
+		prSymbol.setItemMeta(prSymbolMeta);
+		
+		inventoryContents.put(40,prSymbol);
 	}
 	
 	public UndeadHunter(OfflinePlayer player) {
@@ -59,8 +85,8 @@ public class UndeadHunter extends Job {
 	}
 
 	@Override
-	protected List<ItemStack> getHotbarContents() {
-		return hotbarContents;
+	protected HashMap<Integer,ItemStack> getInventoryContents() {
+		return inventoryContents;
 		
 	}
 

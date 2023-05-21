@@ -18,14 +18,6 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 
-import updateEvents.AtkUpdateEvent;
-import updateEvents.CritUpdateEvent;
-import updateEvents.DefUpdateEvent;
-import updateEvents.HpUpdateEvent;
-import updateEvents.IntUpdateEvent;
-import updateEvents.MindUpdateEvent;
-import updateEvents.MpUpdateEvent;
-
 public class EventListener implements Listener {
 	@EventHandler
 	public void onInteract(PlayerInteractEvent e) {
@@ -81,26 +73,6 @@ public class EventListener implements Listener {
 	
 	@SuppressWarnings("deprecation")
 	@EventHandler
-	public void onMpUpdate(MpUpdateEvent e) {
-
-		if(!(e.getPlayer().isOnline())){
-			return;
-		
-		}
-	}
-	
-	@SuppressWarnings("deprecation")
-	@EventHandler
-	public void onAtkUpdate(AtkUpdateEvent e) {
-
-		if(!(e.getPlayer().isOnline())){
-			return;
-		
-		}
-	}
-	
-	@SuppressWarnings("deprecation")
-	@EventHandler
 	public void onDefUpdate(DefUpdateEvent e) {
 
 		if(!(e.getPlayer().isOnline())){
@@ -127,41 +99,6 @@ public class EventListener implements Listener {
 					new AttributeModifier(UUID.randomUUID(),"Def",armorValue,Operation.ADD_NUMBER,EquipmentSlot.FEET));
 	
 		boots.setItemMeta(bootsMeta);
-		
-	}
-	
-	@SuppressWarnings("deprecation")
-	@EventHandler
-	public void onIntUpdate(IntUpdateEvent e) {
-
-		if(!(e.getPlayer().isOnline())){
-			return;
-			
-		}
-	}
-	
-	@SuppressWarnings("deprecation")
-	@EventHandler
-	public void onMindUpdate(MindUpdateEvent e) {
-
-		if(!(e.getPlayer().isOnline())){
-			return;
-			
-		}
-	}
-	
-	
-	@SuppressWarnings("deprecation")
-	@EventHandler
-	public void onCritUpdate(CritUpdateEvent e) {
-
-		if(!(e.getPlayer().isOnline())){
-			return;
-			
-		}
-	}
-	
-	public static void main(String[] args) {
 		
 	}
 }

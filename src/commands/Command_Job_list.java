@@ -22,7 +22,7 @@ public class Command_Job_list implements CommandExecutor {
 				            ChatColor.BLUE+ChatColor.BOLD+
 							ChatColor.UNDERLINE+"  タンク  ");
 		
-		sender.sendMessage("\n"+ChatColor.BLUE+ChatColor.BOLD+"Knight");
+		sender.sendMessage("\n"+ChatColor.YELLOW+ChatColor.BOLD+"Paladin");
 		
 		
 		sender.sendMessage("");
